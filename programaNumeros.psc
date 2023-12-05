@@ -1,14 +1,12 @@
 Algoritmo programaNumeros
-	Definir temp Como Entero;
 	Dimension numeros(3);
-		
-	//Ciclo para ingresar numeros en el array
-	Para i <- 1 hasta 3 hacer
-		escribir "Ingrese el número ", i, ": "
-		Leer numeros[i];
-	FinPara
 	
-	Escribir "";
+    // Ciclo para ingresar números en el array
+    Para i <- 1 hasta 3 hacer
+        Escribir "Ingrese el número ", i, ": ";
+        Leer numeros[i];
+    FinPara
+	
 	//Ciclo que recorre la lista y mira si hay numeros iguales
 	Para i <- 1 hasta 2 hacer
 		Para j <- i + 1 hasta 3 hacer
@@ -19,21 +17,30 @@ Algoritmo programaNumeros
 		FinPara
 	FinPara
 	
-	Escribir "";
-	//Ordenar numeros usando un ciclo con forma tipo burbuja, almacenando variables
-	Para i <- 1 hasta 2 hacer
-		Para j <- 1 hasta 3 - i hacer
-			Si numeros[j] > numeros[j + 1] Entonces
-				temp <- numeros[j]
-				numeros[j] <- numeros[j + 1]
-				numeros[j + 1] <- temp
-			FinSi
-		FinPara
-	FinPara
+    // Ordenar lista de menor a mayor, almacenando en variables temp
+    Si numeros[1] > numeros[2] Entonces
+        temp <- numeros[1];
+        numeros[1] <- numeros[2];
+        numeros[2] <- temp;
+    FinSi
+    Si numeros[2] > numeros[3] Entonces
+        temp <- numeros[2];
+        numeros[2] <- numeros[3];
+        numeros[3] <- temp;
+    FinSi
+    Si numeros[1] > numeros[2] Entonces
+        temp <- numeros[1];
+        numeros[1] <- numeros[2];
+        numeros[2] <- temp;
+    FinSi
 	
-	Escribir "Números ordenados de mayor a menor: ";
-	Escribir numeros[3], ", ", numeros[2], ", ", numeros[1];
+    Escribir "Números ordenados de menor a mayor:";
+    Para i <- 1 hasta 3 hacer
+        Escribir numeros[i];
+    FinPara
 	
-	Escribir  "Números ordenados de menor a mayor: ";
-	Escribir numeros[1], ", ", numeros[2], ", ", numeros[3];	
+    Escribir "Números ordenados de mayor a menor:";
+    Para i <- 3 hasta 1 hacer
+        Escribir numeros[i];
+    FinPara	
 FinAlgoritmo
